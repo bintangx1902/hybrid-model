@@ -17,7 +17,7 @@ def format_output(data):
 
 
 def print_model(model, tf: tensorflow):
-    tf.keras.utils.plot_model(model, show_shapes=True)
+    return tf.keras.utils.plot_model(model, show_shapes=True)
 
 
 def show_image_samples(generated_data, classes):
