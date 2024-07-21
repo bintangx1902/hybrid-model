@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import tensorflow
 from matplotlib import pyplot as plt
+import seaborn as sns
+
 bs = 32
 
 
@@ -36,3 +38,12 @@ def show_image_samples(generated_data, classes):
         plt.title(c_name, color='Blue', fontsize=16)
         plt.axis('off')
     plt.show()
+
+
+def plot_confusion_matrix(cm, title, labels=[0, 1], ax=None):
+    if ax is None:
+        ax = plt.gca()
+    sns.heatmap(cm, annot=True, cmap='Blues', fmt='g', ax=ax)
+    ax.set_title(title, pad=20, fontsize=20, fontweight="bold")
+    ax.set_ylabel('Actual')
+    ax.set_xlabel('Predicted')
