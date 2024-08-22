@@ -25,7 +25,7 @@ def print_model(model, tf: tensorflow):
 def show_image_samples(generated_data, classes):
     class_indices = generated_data.class_indices
     class_ = list(class_indices.keys())
-    imgs, labels = generated_data.next()
+    imgs, labels = generated_data[0][0], generated_data[0][1]
     plt.figure(figsize=(20, 20))
     length = len(labels)
     r = length if length < 25 else 25
